@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#06101d" />
+  <title>PlayX FF Tournament</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">
+      <span>Play<span class="blue">X</span></span>
+      <small>FF TOURNAMENT</small>
+    </a>
+
+    <button id="menuBtn" class="menu-btn" aria-label="Open menu">☰</button>
+
+    <nav id="nav" aria-label="Main navigation">
+      <a href="#tournaments">Tournaments</a>
+      <a href="#rooms">My Room</a>
+      <a href="#results">Results</a>
+      <button id="loginBtn" class="btn ghost">Login</button>
+      <button id="registerBtn" class="btn">Register</button>
+      <button id="logoutBtn" class="btn ghost" hidden>Logout</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">PLAY • COMPETE • WIN</p>
+        <h1>PlayX <span class="blue">FF</span><br><span class="yellow">TOURNAMENT</span></h1>
+        <p class="lead">তোমার স্কিল দেখাও। টুর্নামেন্টে যোগ দাও, fair play করো!</p>
+
+        <div class="actions">
+          <a class="btn" href="#tournaments">টুর্নামেন্ট দেখো</a>
+          <a class="btn ghost" href="#how">কীভাবে খেলবে</a>
+        </div>
+
+        <div class="stats">
+          <div>
+            <b>Free Entry</b>
+            <small>ডেমো টুর্নামেন্ট</small>
+          </div>
+          <div>
+            <b>Mobile Friendly</b>
+            <small>ফোনে ব্যবহারযোগ্য</small>
+          </div>
+          <div>
+            <b>Fair Play</b>
+            <small>সবার জন্য</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="ring"></div>
+        <div class="crosshair">✦</div>
+        <div class="art-title">YOUR<br><span>GAME.</span><br>YOUR GLORY.</div>
+        <div class="art-chip">PLAYX ARENA</div>
+      </div>
+    </section>
+
+    <section class="section" id="account">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">YOUR ACCOUNT</p>
+          <h2 id="accountTitle">Welcome to PlayX</h2>
+        </div>
+        <span id="userStatus" class="muted">লগইন করা হয়নি</span>
+      </div>
+
+      <div class="panel">
+        <form id="authForm" class="form-grid">
+          <label id="displayNameWrap">
+            নাম
+            <input id="displayName" autocomplete="name" placeholder="তোমার নাম" />
+          </label>
+
+          <label>
+            Email
+            <input id="email" type="email" autocomplete="email" required placeholder="you@example.com" />
+          </label>
+
+          <label>
+            Password
+            <input id="password" type="password" autocomplete="current-password" minlength="6" required placeholder="কমপক্ষে ৬ অক্ষর" />
+          </label>
+
+          <button class="btn" id="authSubmit" type="submit">Register</button>
+          <p class="muted tiny" id="authMessage">অ্যাকাউন্ট তৈরি বা লগইন করতে Firebase config সেট করো।</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="tournaments">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">FIND YOUR MATCH</p>
+          <h2>চলমান টুর্নামেন্ট</h2>
+        </div>
+        <span class="muted">Live database</span>
+      </div>
+
+      <div class="cards" id="tournamentList">
+        <p class="muted">Firebase থেকে টুর্নামেন্ট লোড হচ্ছে…</p>
+      </div>
+    </section>
+
+    <section class="section split" id="rooms">
+      <div class="panel">
+        <p class="eyebrow">MATCH ROOM</p>
+        <h2>আমার Room Details</h2>
+        <p class="muted">তুমি যে টুর্নামেন্টে নিবন্ধিত, অ্যাডমিন রুম তথ্য প্রকাশ করলে এখানে দেখা যাবে।</p>
+        <div id="roomList">
+          <p class="muted">লগইন করে নিবন্ধিত টুর্নামেন্ট দেখো।</p>
+        </div>
+      </div>
+
+      <div class="panel" id="how">
+        <p class="eyebrow">HOW TO JOIN</p>
+        <h2>৩টি ধাপ</h2>
+
+        <div class="step">
+          <span>01</span>
+          <div>
+            <b>অ্যাকাউন্ট তৈরি করো</b>
+            <p>ইমেইল ও পাসওয়ার্ড দিয়ে রেজিস্টার করো।</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <span>02</span>
+          <div>
+            <b>টুর্নামেন্টে Join করো</b>
+            <p>তোমার ইন-গেম নাম ও UID দাও।</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <span>03</span>
+          <div>
+            <b>Room details দেখো</b>
+            <p>প্রকাশের পর অনুমোদিত প্লেয়াররা রুম তথ্য দেখতে পারবে।</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">MATCH HISTORY</p>
+          <h2>ফলাফল</h2>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>টুর্নামেন্ট</th>
+              <th>বিজয়ী / ফলাফল</th>
+              <th>প্রকাশ</th>
+            </tr>
+          </thead>
+          <tbody id="resultsList">
+            <tr><td colspan="3">লোড হচ্ছে…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section panel" id="adminPanel" hidden>
+      <p class="eyebrow">ADMIN ONLY</p>
+      <h2>Admin Panel</h2>
+      <p class="muted">এখান থেকে টুর্নামেন্ট তৈরি এবং ফলাফল প্রকাশ করা যাবে। Room ID/password শুধুমাত্র নিবন্ধিত প্লেয়ারদের জন্য।</p>
+
+      <div class="admin-grid">
+        <form id="tournamentForm">
+          <h3>নতুন Tournament</h3>
+          <label>নাম<input id="tTitle" required maxlength="80" placeholder="যেমন Solo Clash" /></label>
+          <label>Mode<select id="tMode"><option>SOLO</option><option>DUO</option><option>SQUAD</option></select></label>
+          <label>Map<input id="tMap" required maxlength="40" placeholder="Bermuda" /></label>
+          <label>Prize pool (text)<input id="tPrize" required maxlength="40" placeholder="৳ 500 অথবা bragging rights" /></label>
+          <label>Start time<input id="tStart" type="datetime-local" required /></label>
+          <button class="btn" type="submit">Tournament তৈরি</button>
+        </form>
+
+        <form id="roomForm">
+          <h3>Room প্রকাশ</h3>
+          <label>Tournament<select id="roomTournament" required></select></label>
+          <label>Room ID<input id="roomId" required maxlength="40" /></label>
+          <label>Room Password<input id="roomPassword" required maxlength="80" /></label>
+          <button class="btn" type="submit">Room details সংরক্ষণ</button>
+        </form>
+
+        <form id="resultForm">
+          <h3>Result প্রকাশ</h3>
+          <label>Tournament<select id="resultTournament" required></select></label>
+          <label>Winner / Result<input id="winner" required maxlength="120" /></label>
+          <label>Details<input id="resultDetails" maxlength="300" placeholder="ঐচ্ছিক" /></label>
+          <button class="btn" type="submit">Result প্রকাশ</button>
+        </form>
+      </div>
+
+      <h3>Registrations</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Player</th>
+              <th>In-game name</th>
+              <th>UID</th>
+              <th>Tournament ID</th>
+            </tr>
+          </thead>
+          <tbody id="registrationsList">
+            <tr><td colspan="4">লোড হচ্ছে…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="#">
+      <span>Play<span class="blue">X</span></span>
+      <small>FF TOURNAMENT</small>
+    </a>
+    <p>Fan-made community platform concept. Not affiliated with Garena or Free Fire.</p>
+  </footer>
+
+  <div class="modal-backdrop" id="joinModal" hidden>
+    <section class="modal" role="dialog" aria-modal="true">
+      <button class="close" id="joinClose" aria-label="Close">×</button>
+      <p class="eyebrow">TOURNAMENT REGISTRATION</p>
+      <h2 id="joinTitle">Join Tournament</h2>
+
+      <form id="joinForm">
+        <label>In-game name<input id="ign" required maxlength="40" /></label>
+        <label>Free Fire UID<input id="ffuid" required inputmode="numeric" pattern="[0-9]{5,20}" title="৫–২০ সংখ্যার UID" maxlength="20" /></label>
+        <label>Team name (DUO/SQUAD হলে)<input id="teamName" maxlength="50" /></label>
+        <button class="btn full" type="submit">Confirm Join</button>
+      </form>
+    </section>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
