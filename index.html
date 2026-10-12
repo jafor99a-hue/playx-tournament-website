@@ -63,34 +63,114 @@
     </section>
 
     <section class="section" id="account">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">YOUR ACCOUNT</p>
-          <h2 id="accountTitle">Welcome to PlayX</h2>
+      <div class="auth-container">
+        <!-- Login Panel -->
+        <div class="auth-panel login-panel" id="loginPanel">
+          <div class="panel-header">
+            <div class="panel-brand">
+              <span>Play<span class="blue">X</span></span>
+              <small>FF TOURNAMENT</small>
+            </div>
+          </div>
+          
+          <div class="panel-content">
+            <p class="eyebrow">Welcome Back</p>
+            <h2>Login to your account</h2>
+            
+            <form id="loginForm" class="auth-form">
+              <label>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                Email or Username
+                <input type="email" id="loginEmail" required placeholder="you@example.com" />
+              </label>
+
+              <label>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                Password
+                <input type="password" id="loginPassword" required placeholder="Enter your password" />
+              </label>
+
+              <div class="form-options">
+                <label class="checkbox">
+                  <input type="checkbox" id="rememberMe" />
+                  <span>Remember me</span>
+                </label>
+                <a href="#" class="forgot-link">Forgot password?</a>
+              </div>
+
+              <button type="submit" class="btn full">Login</button>
+              
+              <p class="form-footer">Don't have an account? <a href="#" id="switchToRegister" class="link">Register</a></p>
+            </form>
+
+            <div class="divider">Or login with</div>
+            
+            <div class="social-login">
+              <button type="button" class="social-btn google">
+                <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+              </button>
+              <button type="button" class="social-btn facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+              </button>
+            </div>
+          </div>
         </div>
-        <span id="userStatus" class="muted">লগইন করা হয়নি</span>
-      </div>
 
-      <div class="panel">
-        <form id="authForm" class="form-grid">
-          <label id="displayNameWrap">
-            নাম
-            <input id="displayName" autocomplete="name" placeholder="তোমার নাম" />
-          </label>
+        <!-- Register Panel -->
+        <div class="auth-panel register-panel" id="registerPanel" hidden>
+          <div class="panel-header">
+            <div class="panel-brand">
+              <span>Play<span class="blue">X</span></span>
+              <small>FF TOURNAMENT</small>
+            </div>
+          </div>
+          
+          <div class="panel-content">
+            <p class="eyebrow">Create Account</p>
+            <h2>Join PlayX and start your journey</h2>
+            
+            <form id="registerForm" class="auth-form">
+              <label>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                Full Name
+                <input type="text" id="registerName" required placeholder="তোমার নাম" />
+              </label>
 
-          <label>
-            Email
-            <input id="email" type="email" autocomplete="email" required placeholder="you@example.com" />
-          </label>
+              <label>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><path d="M22 6l-10 7L2 6"></path></svg>
+                Email Address
+                <input type="email" id="registerEmail" required placeholder="you@example.com" />
+              </label>
 
-          <label>
-            Password
-            <input id="password" type="password" autocomplete="current-password" minlength="6" required placeholder="কমপক্ষে ৬ অক্ষর" />
-          </label>
+              <label>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                Password
+                <input type="password" id="registerPassword" required placeholder="কমপক্ষে ৬ অক্ষর" minlength="6" />
+              </label>
 
-          <button class="btn" id="authSubmit" type="submit">Register</button>
-          <p class="muted tiny" id="authMessage">অ্যাকাউন্ট তৈরি বা লগইন করতে Firebase config সেট করো।</p>
-        </form>
+              <label>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                Confirm Password
+                <input type="password" id="registerConfirm" required placeholder="Confirm password" />
+              </label>
+
+              <button type="submit" class="btn full">Register</button>
+              
+              <p class="form-footer">Already have an account? <a href="#" id="switchToLogin" class="link">Login</a></p>
+            </form>
+
+            <div class="divider">Or register with</div>
+            
+            <div class="social-login">
+              <button type="button" class="social-btn google">
+                <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+              </button>
+              <button type="button" class="social-btn facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -175,7 +255,7 @@
     <section class="section panel" id="adminPanel" hidden>
       <p class="eyebrow">ADMIN ONLY</p>
       <h2>Admin Panel</h2>
-      <p class="muted">এখান থেকে টুর্নামেন্ট তৈরি এবং ফলাফল প্রকাশ করা যাবে। Room ID/password শুধুমাত্র নিবন্ধিত প্লেয়ারদের জন্য।</p>
+      <p class="muted">এখান থেকে টুর্নামেন্ট তৈরি এবং ফলাফল প্রকাশ করা যাবে। Room ID/password শুধুমাত্র approved players এর কাছে প্রদর্শিত হবে।</p>
 
       <div class="admin-grid">
         <form id="tournamentForm">
